@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Sound;
 
 public class Player extends Entity {
 
@@ -9,10 +10,12 @@ public class Player extends Entity {
     private static final float LASER_TICK = 0.1f;
 
     float laserTick = LASER_TICK;
+    Sound sound;
 
 
     public Player() {
         super("playerShip1_blue.png");
+        sound = Gdx.audio.newSound(Gdx.files.internal("sfx_laser1.ogg"));
     }
 
     @Override
@@ -33,6 +36,7 @@ public class Player extends Entity {
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
             if (laserTick > LASER_TICK) {
                 laserTick = 0;
+                sound.play();
                 game.entities.add(new Laser(this));
             }
         }

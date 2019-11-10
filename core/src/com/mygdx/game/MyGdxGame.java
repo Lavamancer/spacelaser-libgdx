@@ -52,6 +52,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		bitmapFont.draw(spriteBatch, text, 10, Gdx.graphics.getHeight() - 10f);
 
 		spriteBatch.end();
+
+
+		if (Math.random() > 0.90f) {
+			entities.add(new Meteor());
+		}
 	}
 
 }
