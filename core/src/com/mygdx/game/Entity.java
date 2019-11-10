@@ -18,7 +18,7 @@ public abstract class Entity {
         spriteBatch.draw(texture, x, y);
     }
 
-    public void update(float delta) {
+    public void update(MyGdxGame game, float delta) {
         // todo implement
     }
 
