@@ -5,13 +5,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public abstract class Entity {
 
-    int x;
-    int y;
+    float x;
+    float y;
     Texture texture;
 
 
+    public Entity() {
+
+    }
+
     public Entity(String texturePath) {
-        texture = new Texture(texturePath);
+        texture = AssetTool.getInstance().load(texturePath, Texture.class);
     }
 
     public void draw(SpriteBatch spriteBatch) {

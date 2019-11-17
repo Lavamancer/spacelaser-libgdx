@@ -11,9 +11,9 @@ public class Laser extends Entity {
 
     public Laser(Player player) {
         super("laserBlue01.png");
-        x = player.x + player.texture.getWidth() / 2 - texture.getWidth() / 2;
+        x = player.x + player.texture.getWidth() / 2f - texture.getWidth() / 2f;
         y = player.y;
-        sound = Gdx.audio.newSound(Gdx.files.internal("explosion1.ogg"));
+        sound = AssetTool.getInstance().load("explosion1.ogg", Sound.class);
     }
 
     @Override
@@ -23,10 +23,10 @@ public class Laser extends Entity {
             game.entities.remove(this);
         }
 
-        for (Entity meteor : game.entitiesAux) {
-            if (meteor instanceof Meteor) {
-                if (overlaps(this, meteor)) {
-                    game.entities.remove(meteor);
+        for (Entity e : game.entitiesAux) {
+            if (e instanceof Meteor || e instanceof Enemy) {
+                if (overlaps(this, e)) {
+                    game.entities.remove(e);
                     game.entities.remove(this);
                     sound.setPitch(sound.play(), 0.6f);
                 }

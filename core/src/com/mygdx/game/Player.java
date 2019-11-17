@@ -15,7 +15,7 @@ public class Player extends Entity {
 
     public Player() {
         super("playerShip1_blue.png");
-        sound = Gdx.audio.newSound(Gdx.files.internal("sfx_laser1.ogg"));
+        sound = AssetTool.getInstance().load("sfx_laser1.ogg", Sound.class);
     }
 
     @Override

@@ -57,6 +57,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		if (Math.random() > 0.98f) {
 			entities.add(new Meteor());
 		}
+
+		if (Math.random() > 0.98f) {
+			entities.add(new Enemy());
+		}
+
 	}
 
 }
