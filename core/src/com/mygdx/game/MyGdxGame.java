@@ -54,7 +54,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		spriteBatch.end();
 
 
-		if (Math.random() > 0.90f) {
+		if (Math.random() > 0.98f) {
 			entities.add(new Meteor());
 		}
 	}

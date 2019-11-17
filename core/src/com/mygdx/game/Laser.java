@@ -13,7 +13,7 @@ public class Laser extends Entity {
         super("laserBlue01.png");
         x = player.x + player.texture.getWidth() / 2 - texture.getWidth() / 2;
         y = player.y;
-        sound = Gdx.audio.newSound(Gdx.files.internal("sfx_lose.ogg"));
+        sound = Gdx.audio.newSound(Gdx.files.internal("explosion1.ogg"));
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Laser extends Entity {
                 if (overlaps(this, meteor)) {
                     game.entities.remove(meteor);
                     game.entities.remove(this);
-                    sound.setPitch(sound.play(), 0.7f);
+                    sound.setPitch(sound.play(), 0.6f);
                 }
             }
         }
